@@ -37,13 +37,11 @@ class CodeWarsTest {
     }
 
     fun isPrime(number : Long) : Boolean {
-        var zero : Long = 0
-        var n : Long = 2
-        while (n <= sqrt(number.toDouble()).toLong()) {
-            if (number % n == zero)
+        (2..sqrt(number.toDouble()).toLong()).forEach {
+            if (number % it == 0L)
                 return false
-            n++
         }
+
         return true
     }
 
